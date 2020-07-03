@@ -1,0 +1,111 @@
+﻿Microsoft Windows [Versión 6.1.7601]
+Copyright (c) 2009 Microsoft Corporation. Reservados todos los derechos.
+
+C:\Users\ELVIS\git\tp-2020-avilacalderon\Blockchain>initEth.sh
+
+C:\Users\ELVIS\git\tp-2020-avilacalderon\Blockchain>cd truffle
+
+C:\Users\ELVIS\git\tp-2020-avilacalderon\Blockchain\truffle>truffle migrate --network live --reset
+
+Compiling your contracts...
+===========================
+> Compiling .\contracts\Migrations.sol
+> Compiling .\contracts\Usuario.sol
+> Artifacts written to C:\Users\ELVIS\git\tp-2020-avilacalderon\Blockchain\truffle\build\contracts
+> Compiled successfully using:
+   - solc: 0.5.16+commit.9c3226ce.Emscripten.clang
+
+
+
+Starting migrations...
+======================
+> Network name:    'live'
+> Network id:      58343
+> Block gas limit: 6721975 (0x6691b7)
+
+
+1_initial_migration.js
+======================
+
+   Replacing 'Migrations'
+   ----------------------
+   > transaction hash:    0x086965968b96bd1208c483dd75cbb8bd04e7d8f53ac1b508aa80372c1084ccbf
+   > Blocks: 0            Seconds: 0
+   > contract address:    0xF7b53C8C3ca4Ac07aD777178E730ba090322a640
+   > block number:        33
+   > block timestamp:     1592512008
+   > account:             0x33E8F4f44830E39C5f2DAf416F02481086D60FEB
+   > balance:             99.91052376
+   > gas used:            164175 (0x2814f)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.0032835 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:           0.0032835 ETH
+
+
+2_deploy_usuario.js
+===================
+
+   Replacing 'Usuario'
+   -------------------
+   > transaction hash:    0x20b372f704c9744a355b2afe013d1779a119bab069f0b53ac56b5ae5ab7c2fff
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x0A3eC0D2186D6602e06C4302F9Ae24BCfB2917dc
+   > block number:        35
+   > block timestamp:     1592512009
+   > account:             0x33E8F4f44830E39C5f2DAf416F02481086D60FEB
+   > balance:             99.9034178
+   > gas used:            312957 (0x4c67d)
+   > gas price:           20 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00625914 ETH
+
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:          0.00625914 ETH
+
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.00954264 ETH
+
+
+
+
+C:\Users\ELVIS\git\tp-2020-avilacalderon\Blockchain\truffle>truffle console --network live
+truffle(live)> test
+Using network 'live'.
+
+
+Compiling your contracts...
+===========================
+> Compiling .\contracts\Migrations.sol
+> Compiling .\contracts\Usuario.sol
+> Artifacts written to C:\Users\ELVIS\AppData\Local\Temp\VSCodePortableTemp\test-2020518-4296-14qkjki.nlfyg
+> Compiled successfully using:
+   - solc: 0.5.16+commit.9c3226ce.Emscripten.clang
+
+truffle(live)>
+
+  Contract: Test de un Usuario
+    √ Retiro menos plata de lo que tengo, espero 80 (412ms)
+    √ Retiro todo lo que tengo (100), espero 0 (267ms)
+    √ Retiro 0 pesos, espero un error (398ms)
+    √ Retiro un monto negativo, espero un error (308ms)
+    √ Retiro mas de lo que tengo (100), espero un error (519ms)
+    √ Deposito 50, espero 150 (410ms)
+    √ Deposito 0 pesos, espero un error (228ms)
+    √ Deposito un numero negativo. espero un error (181ms)
+
+
+  8 passing (7s)
+
+truffle(live)>
